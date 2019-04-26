@@ -82,7 +82,7 @@ gibbsBLasso = function(x, y, max.steps) {
 	}
 
       
-	# t1 = colMedians(betaSamples[seq(max.steps/2, max.steps, 5), ])
+      # t1 = colMedians(betaSamples[seq(max.steps/2, max.steps, 5), ])
       # t2 = colMedians(sigma2Samples[seq(max.steps/2, max.steps, 5), ])
       t1 = betaSamples
       t2 = sigma2Samples
@@ -122,7 +122,13 @@ gibbsBLasso = function(x, y, max.steps) {
 
       max.steps = 100000
 
-      d = 5  # the dth predictor
+      # The dth predictor
+      # Change d from 1 to 10 to observe the posterior distribution of beta
+      # d = 1 and 4 correspond to important predictors
+      # Can you obtain sparsity directly based on the posterior estimate?
+      
+      d = 5 
+      
       t1=as.matrix(betas$t1[,d])
       t1 = t1[seq(max.steps/2, max.steps,20),]
       plot(t1)
