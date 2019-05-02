@@ -4,7 +4,7 @@
       
       # The gibbsBLasso function is adapted from 
       # https://cs.gmu.edu/~pwang7/gibbsBLasso.html
-      # Any bug(s) in the Gibbs sampler?
+      # Any bugs in the Gibbs sampler?
 
 
       rm(list=ls(all=TRUE))
