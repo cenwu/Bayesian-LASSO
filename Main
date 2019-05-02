@@ -121,6 +121,17 @@ gibbsBLasso = function(x, y, max.steps) {
       betas <- gibbsBLasso(x, y, max.steps = 100000)
 
       max.steps = 100000
+      
+      # A quick check on the results
+      
+      apply(betas$t1, 2, median)
+
+      round(apply(betas$t1, 2, median), digits = 2)
+
+      quants = apply(betas$t1, 2, quantile, prob=c(0.025, 0.975))
+
+      abs(sign(quants[1,])+sign(quants[2,])) == 2
+      
 
       # The dth predictor
       # Change d from 1 to 10 to observe the posterior distribution of beta
